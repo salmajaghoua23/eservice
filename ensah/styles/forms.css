@@ -1,0 +1,44 @@
+/*
+HTML 5 Template Name: Symfoni
+File: Forms CSS
+Author: OS Templates
+Author URI: http://www.os-templates.com/
+Licence: <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>
+*/
+
+form, fieldset, legend{margin:0; padding:0; border:none;}
+legend{display:none;}
+input, textarea, select{font-size:12px; font-family:Georgia,"Times New Roman",Times,serif;}
+
+/* ----------------------------------------------Search Form-------------------------------------*/
+
+#header form{float:right; margin:0 0 0 30px; padding:0;}
+#header form input{display:block; float:left; width:200px; margin:0; padding:8px; border:1px solid #DDDDDD;}
+#header form #sf_submit{width:auto; padding:7px; font-weight:bold; text-transform:uppercase; color:#333333; background-color:#F1F1F1; border-left:none; cursor:pointer;}
+
+/* ----------------------------------------------Forms in Comment Area-------------------------------------*/
+
+#comments form{display:block; width:100%;}
+#comments form input{width:170px; padding:2px; border:1px solid #CCCCCC; margin:5px 5px 0 0;}
+#comments form textarea{width:98%; border:1px solid #CCCCCC; padding:2px; overflow:auto;}
+#comments form p{margin:5px 0;}
+#comments form #submit, #comments form #reset{margin:0; padding:5px; color:#666666; background-color:#F7F7F7; cursor:pointer;}
+
+/* ----------------------------------------------Contact Form in Footer------------------------------------*/
+
+#footer label{display:none;}
+#footer input, #footer textarea{display:block; width:207px; margin:0 0 10px 0; padding:8px; border:1px solid #D1D1D1; color:#989898; background-color:#E6E6E6;}
+#footer textarea{height:90px; overflow:auto;}
+#footer button{padding:8px; font-size:13px; font-weight:bold; text-transform:uppercase; color:#2BBEDD; background-color:#E6E6E6; border:none; cursor:pointer;}
+
+/* CSS3 Elements - Only work in latest browsers */
+
+#comments input, #comments textarea, #comments button, 
+#footer input, #footer textarea, #footer button{
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-khtml-border-radius:10px;
+	border-radius:10px;
+	}
+
+input, textarea, select{resize:none; outline:none;}

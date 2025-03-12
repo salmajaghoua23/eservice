@@ -1,0 +1,28 @@
+.windy-demo {
+	width: 416px;
+	margin: 40px auto;
+	color: #aaa;
+}
+
+.windy-demo ul.wi-container {
+	width: 360px;
+	height: 240px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.windy-demo h4 {
+	padding: 0 10px;
+	line-height: 26px;
+	margin: 0;
+}
+
+.windy-demo ul.wi-container li {
+	padding: 0;
+	border: 10px solid #fff;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
