@@ -51,19 +51,21 @@ $(function () {
 
 <style>
   #map {
-      width:  60%;
-      height: 300px;
+      width:  150%;
+      height: 600px;
       border: 1px;
       border-radius: 8px;
   }
 
   footer {
-    
       background-color: darkblue;
       color: white;
       padding: 40px 0;
       margin-top: 20px;
-      width: 100%;
+      width: 100vmax;
+      position: relative;
+      margin-left:-215px;
+      right:-20px;
   }
 
   footer a {
@@ -76,12 +78,60 @@ $(function () {
       text-decoration: underline;
       opacity: 1;
   }
-
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  .logo-left img {
+    position: absolute;
+    top: 10px;
+    left:20px;
+    width: 120px; /* Ajuste selon besoin */
+  }
+/* Style du logo ENSAH droit */
+  .logo-right {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width:200px;
+  }
   .StyleBodyCols {
       font-size: 12px;
       text-align: center;
   }
-
+  .Stylelog {
+    font-family: 'Arial', sans-serif;
+    color: #2017a3; /* Bleu vif */
+    font-weight: bold;
+    text-align: left;
+    line-height: 1.2;
+  }
+  .Stylelog p {
+    margin: 0;
+    padding: 0;
+  }
+  .Stylelog p:first-child {
+    font-size: 24px; /* Taille plus grande pour "Université" */
+    font-weight: bold;
+  }
+  .Stylelog p:nth-child(2) {
+    font-size: 18px; /* Taille intermédiaire pour "ABDELMALEK ESSAADI" */
+    font-weight: bold;
+  }
+  .Stylelog p:nth-child(3) {
+    font-size: 16px; /* Taille normale pour le reste */
+    font-weight: normal;
+  }
+  h1 {
+    background-color: transparent; /* Suppression de l'arrière-plan */
+    padding: 10px 0; /* Ajustement de l'espacement */
+    text-align: left;
+  }
+  #hgroup{
+    display: flex;
+  }
   .mainIcons {
       margin: 0;
       padding: 0;
@@ -102,6 +152,241 @@ $(function () {
       -o-filter: contrast(0.6);
       -ms-filter: contrast(0.6);
   }
+  /* Style pour le menu */
+  /* Conteneur pour aligner le menu et la barre de recherche */
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Le menu à gauche, la recherche à droite */
+    padding: 10px 20px;
+    text-transform: capitalize
+  }
+/* Style du menu */
+  #topnav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  #topnav ul li {
+    margin-right: 20px;
+  }
+  #topnav ul li a {
+    text-decoration: none;
+    color: white; /* Texte en blanc */
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px 15px; /* Espacement pour un meilleur rendu */
+    transition: 0.3s;
+    background: none; /* Suppression du fond blanc */
+    border-radius: 0; /* Supprime tout arrondi */
+  }
+  #topnav ul li a:hover {
+    border-radius: 5px;
+  }
+/* Style de la barre de recherche */
+  .fl_right {
+    display: flex;
+    align-items: center;
+  }
+  #searchform {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 400px;
+  }
+  #searchform input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 100%;
+    font-size: 14px;
+    flex-grow: 1;
+    color:#2017a3;
+  }
+  #searchform input[type="submit"] {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+    margin-left: 290px; 
+  }
+  #searchform input[type="submit"]:hover {
+    background-color: #004080;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+/*login style*/
+  /* Conteneur principal : mettre les deux blocs côte à côte */
+/* Conteneur principal : mettre la carte et le login côte à côte */
+.map-login-container {
+    display: flex;
+    justify-content: space-between; /* Centre les éléments horizontalement */
+    align-items: center; /* Aligne verticalement */
+    gap: 30px; /* Ajoute un espace entre la carte et le login */
+    max-width: 1100px; /* Largeur max pour éviter que ça s'étire trop */
+    margin: auto; /* Centre le bloc sur la page */
+    padding: 20px;
+}
+
+/* Ajustement de la carte */
+#homepage {
+    flex: 1; /* Permet d'équilibrer la largeur avec le login */
+    max-width: 50%; /* Pour assurer que la carte ne prend pas toute la place */
+}
+
+/* Ajustement du formulaire de connexion */
+.login-page {
+    flex: 1; /* Prend la même largeur que la carte */
+    max-width: 40%; /* Assure une symétrie avec la carte */
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -150px;
+    animation: fadeIn 0.6s ease-in;
+}
+
+/* Boîte du formulaire */
+.form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(245, 242, 242, 0.932);
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 400px; /* Ajusté pour être similaire à la carte */
+}
+
+/* Effet hover */
+.form:hover {
+    transform: translateY(-4px);
+}
+
+/* Titre et logo */
+.form-header {
+    color: #0b56a1; /* Bleu ENSAH */
+    font-weight: bold;
+    text-align: center; /* Centrage du texte */
+    font-size: 1.8rem; /* Ajustement de la taille */
+    background-color:transparent; /* Suppression du fond gris */
+    padding: 10px 0;
+}
+
+.form-header img {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+.form-header h1 {
+    color: #1976D2 !important;
+    font-weight: 500;
+    margin: 0 0 0.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    background-color:transparent !important;
+    border: none !important; /* Assure qu'il n'y a pas de bordure */
+    box-shadow: none !important;
+}
+.form-header p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Champs du formulaire */
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1.5rem;
+    border: 2px solid #e3f2fd;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #f5fbff;
+}
+
+/* Placeholder */
+.form input::placeholder {
+    color: #90a4ae;
+}
+
+/* Focus */
+.form input:focus {
+    border-color: #2196F3;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
+    transform: scale(1.02);
+}
+
+/* Bouton de connexion */
+.form button {
+    background: #2196F3;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.form button:hover {
+    background: #1976D2;
+    box-shadow: 0 6px 16px rgba(25, 118, 210, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Footer du formulaire */
+.form-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #757575;
+}
+
+.form-footer a {
+    color: #2196F3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Adaptation pour mobile */
+@media (max-width: 768px) {
+    .map-login-container {
+        flex-direction: column; /* Passe en colonne */
+        align-items: center;
+    }
+
+    #homepage, .login-page {
+        max-width: 100%;
+    }
+
+    .form {
+        max-width: 100%;
+    }
+}
+
+/* Animation pour une meilleure apparence */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/*style de pesentation*/
+#presentation h1{
+  color:#0f0a57;
+}
+#presentation p{
+  color:#161515;
+  font-size: 18px;
+}
 </style>
 </head>
 <body>
@@ -116,85 +401,48 @@ $(function () {
 <div class="wrapper row1">
   <header id="header" class="clear">
     <div id="hgroup">
-      <h1> <span
-						class="Stylelog"><p>Université ABDELMALEK ESSAADI</p> Ecole Nationale des Sciences Appliquées d'Al Hoceima</span> </h1>
-      <h3 class="logosstitre"><a href="index.html">Site Officiel de l'ENSA d'Al-Hoceima</a></h3>
+      <div class="logo-left">
+        <img src="../webimages/image1.jfif" width="100px" />
+      </div>
+      <h1> <span class="Stylelog"><p>Université<br> ABDELMALEK ESSAADI</p><p>Ecole Nationale des Sciences<br> Appliquées d'Al Hoceima</p> </span> </h1>
+    </div> 
+    <div class="logo-right">
+      <img src="../webimages/image2.jfif" width="200px" style="float: right;"/>
     </div>
-    <div class="fl_right">
-      <form id="searchform" action="http://www.google.com/cse">
-        <fieldset>
-        <legend></legend>
-        <input type="hidden" name="cx" value="000996684662007214448:snj8osbs_lw" />
-        <input type="hidden" name="ie" value="UTF-8" />
-        <input  class="formsearch" type="text" value="Rechercher sur notre site&hellip;"  name="q" id="q"
-							onFocus="this.value=(this.value=='Rechercher sur notre site&hellip;')? '' : this.value ;">
-        <input type="submit"    id="sf_submit" name="sa"   value="Rechercher" style="height:31px">
-        </fieldset>
-      </form>
-            <ul id="social">
-	  	
-        
-		<li><a href="https://portal.microsoftonline.com/" target="_blank"><img src="../ensah.ma/images/social/contact.png" alt=""></a></li>
+    <ul id="social">
+		  <li><a href="https://portal.microsoftonline.com/" target="_blank"><img src="../ensah.ma/images/social/contact.png" alt=""></a></li>
         <li><a href="https://twitter.com/ensaalhoceima" target="_blank"><img src="../ensah.ma/images/social/2.png" alt=""></a></li>
         <li><a href="https://www.facebook.com/ensaalhoceima" target="_blank"><img src="../ensah.ma/images/social/3.png" alt=""></a></li>       
-		<li><a href="#"><img src="../ensah.ma/images/social/1.png" alt=""></a></li>
-
-
-      </ul>    </div>
+		  <li><a href="#"><img src="../ensah.ma/images/social/1.png" alt=""></a></li>
+    </ul>    
   </header>
 </div>
 <!-- ### Menu du site ### -->
 <div style="font-family:Arial, Helvetica, sans-serif">
   <div class="wrapper row2">
-  <nav id="topnav">
-    <ul class="clear">
-      <li class="first active"><a href="http://ensah.ma/index.php">Accueil</a><span></span></li>
-			
-		 <li><a href="#">ENSAH</a><span></span>
-			<ul>
-			
-			
-		<!--	  <li><a href="http://ensah.ma/pages/motdirecteur.php">Mot du Directeur</a></li>-->	
-			  <li><a href="http://ensah.ma/pages/presentation.php">Présentation</a></li>			 
-			 <!-- <li><a href="http://ensah.ma/pages/infrastructur.php ">Infrastructures</a></li>		-->	  			  
-			  <li><a href="http://ensah.ma/pages/etudes.php">Les études</a></li>
-			  <li><a href="http://ensah.ma/pages/conditionsacces.php">Conditions d'accès</a></li>
-			<!--  <li><a href="#">Partenaires officiels</a></li>-->
-			  <li><a href="http://ensah.ma/pages/reglements.php">Réglements et textes juridiques</a></li>
-			</ul>
-	  </li>	 	
-						
-			<li><a href="#">Organisation</a><span></span>
-				<ul>
-				  <li><a href="http://ensah.ma/pages/administration.php">Administration</a></li>
-				<!--  <li><a href="http://ensah.ma/pages/conseiletablissement.php">Conseil d'Etablissement</a></li>-->
-				  <li><a href="http://ensah.ma/pages/departement.php">Départements</a></li>
-				<!--    <li><a href="">Services</a></li> -->
-				</ul>
-	  </li>
-			<li><a href="http://ensah.ma/pages/corpsenseignant.php">Enseignants</a><span></span></li>
-
-			
- 		
-		  	<li><a href="#">Formation </a><span></span>
-				<ul>
-				  <li><a href="http://ensah.ma/pages/cp.php">Cycle Préparatoire</a></li>
-				  <li><a href="http://ensah.ma/pages/gc.php">Génie Civil</a></li>
-				  <li><a href="http://ensah.ma/pages/gi.php">Génie Informatique</a></li>
-				   <li><a href="http://ensah.ma/pages/geer.php">Génie energitiques et Energies Renouvelables</a></li>
-				</ul>
-          </li>	 
-		 <li><a href="http://ensah.ma/recherche/">Recherche </a><span></span></li>
-
-	  	<li><a href="http://ensah.ma/etudiants/">Espace Etudiants</a><span></span> </li>	
-	  	<li><a href="http://ensah.ma/biblio/">Bibliothèque</a> <span></span></li>	
-
-	     <li><a href="http://ensah.ma/apps/eservices" target="_blank">E-Services</a> <span></span></li>	
-	
-     
-    </ul>
-  </nav>
-
+    <div class="nav-container">
+      <nav id="topnav">
+        <ul class="clear">
+          <li class="first active"><a href="http://ensah.ma/index.php">Accueil</a></li>
+          <li><a href="#presentation">Présentation</a></li>    
+          <li><a href="#map">Location</a></li>
+          <li><a href="#map">Inscription</a></li>
+          <li><a href="#contact-section">Contact</a></li>      
+        </ul>
+      </nav>
+      <div class="fl_right">
+        <form id="searchform" action="http://www.google.com/cse">
+          <fieldset>
+            <input type="hidden" name="cx" value="000996684662007214448:snj8osbs_lw" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input class="formsearch" type="text" value="Rechercher sur notre site…" name="q" id="q"
+                   onFocus="this.value=(this.value=='Rechercher sur notre site…')? '' : this.value ;">
+            <input type="submit" id="sf_submit" name="sa" value="Rechercher">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 <div><!-- content -->
 <div class="wrapper row3">
@@ -248,8 +496,28 @@ $(function () {
         </div>
       </div>
     </section>
+    <section id="presentation">
+      <h1>ENSA d'Al-Hoceima</h1>
+      <p>L'École Nationale des Sciences Appliquées d'Al Hoceima (ENSAH), créée en 2008, est un établissement public<br>
+          d'enseignement supérieur affilié à l'Université Abdelmalek Essaadi.<br>
+          Sa mission est de former des ingénieurs d'État hautement qualifiés dans des domaines en pleine expansion,<br>
+          répondant aux besoins du tissu socio-économique régional et national.<br>
+          Grâce à son positionnement stratégique, l'école vise à renforcer
+          sa dimension euro-méditerranéenne et à contribuer<br> au développement de la formation en ingénierie.<br>
+        L'ENSAH propose un cursus structuré comprenant deux années préparatoires suivies de trois années de spécialisation <br>
+         dans plusieurs disciplines, notamment le génie informatique, le génie civil, le génie de l'eau et de l'environnement,<br>
+         le génie énergétique et les énergies renouvelables, le génie mécanique, l'ingénierie des données ainsi que<br>
+        la transformation digitale et l'intelligence artificielle.
+        S'étendant sur une superficie de 5 700 m², l'école joue un rôle clé dans le développement scientifique
+         de la région en consolidant l'enseignement supérieur technique et en favorisant la formation professionnelle.<br>
+          Elle dispose d'une capacité d'accueil de plus de 500 étudiants et met à leur disposition des infrastructures modernes, <br>
+          comprenant des amphithéâtres, des salles de cours et de travaux pratiques, des laboratoires, une bibliothèque, <br>
+          ainsi que divers équipements sportifs et espaces de vie, tels qu'une cafétéria et une résidence universitaire. <br>
+          Cette dernière, pouvant héberger jusqu'à 500 étudiants et étudiantes, offre un cadre propice aux études et à la vie étudiante.</p>
+    </section>
    <!-- map-------------------------------------------------------------------------------------------------------------------------- -->
-    <div id="homepage" >
+  <div class="map-login-container">
+   <div id="homepage" >
       <!-- ########################################################################################## -->
     
         <h1 style="text-align:justify; color: rgb(48, 180, 201); font-size: 20px;"> <span >  <strong>ENSAH sur Maps</strong>  </span>    </h1>
@@ -264,11 +532,50 @@ $(function () {
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-    
-     
-        
+    </iframe>    
     </div>
+    <div class="login-page">
+        <div class="form">
+            <div class="form-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/638/638032.png" alt="Logo Université">
+                <h1 >Portail eServices</h1>
+                <p>Connectez-vous avec vos identifiants institutionnels</p>
+            </div>
+
+            <form class="login-form" method="POST" action="login.php">
+                <input 
+                    type="email" 
+                    name="email"
+                    placeholder="utilisateur@etu.uae.ac.ma" 
+                    pattern="[a-zA-Z0-9._%+-]+@etu\.uae\.ac\.ma" 
+                    title="Email institutionnel requis"
+                    required
+                />
+                <input 
+                    type="password" 
+                    name="password" 
+                    placeholder="••••••••" 
+                    minlength="8"
+                    required
+                />
+                <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    Connexion
+                </button>
+            </form>
+
+            <div class="form-footer">
+                <a href="mailto:support@uae.ac.ma">Assistance technique</a>
+                <div style="margin-top: 0.8rem; color: #1976D2;">
+                     Ecole Nationale des Sciences Appliquées d'Al Hoceima
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
 
 
 
@@ -277,7 +584,7 @@ $(function () {
         <div class="container">
             <div class="row">
                 <!-- Contacts de l'école -->
-                <div class="col-md-4">
+                <div class="col-md-4"  id="contact-section">
                     <h4 style="background-color: darkblue; color: white;">Contacts</h4>
                     <ul class="list-unstyled">
                         <li><strong>Adresse :</strong> Al Hoceima, Maroc</li>
@@ -301,8 +608,6 @@ $(function () {
                         <li>Génie de l’Eau & de l’Environnement</li>
                     </ul>
                 </div>
-
-               
                 <div class="col-md-4">
                     <h4 style="background-color: darkblue; color: white;">LIENS UTILES</h4>
                     <ul class="list-unstyled">
