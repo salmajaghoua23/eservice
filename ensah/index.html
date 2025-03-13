@@ -14,11 +14,14 @@
 <script src="scripts/jquery-1.8.2.min.js"></script>
 <script src="scripts/jquery-defaultvalue.js"></script>
 <script src="scripts/jquery-browsercheck.js"></script>
-<!--[if lt IE 9]>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+[if lt IE 9]>
 <link rel="stylesheet" href="styles/ie.css" type="text/css">
 <script src="scripts/ie/html5shiv.min.js"></script>
-<![endif]-->
-<!-- homepage slider scripts -->
+
+
 <script src="scripts/jquery-slides.js"></script>
 <script>
 $(function () {
@@ -42,10 +45,31 @@ $(function () {
 <!-- / homepage slider scripts -->
 <style>
 
+#map {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 8px;
+        }
+        /* Style pour le footer */
+        footer {
+            background-color: #1a135f;
+            color: white;
+            padding: 40px 0;
+            margin-top: 20px;
+            width: 100%;
+            bottom: 0;
+        }
+        footer a {
+          text-decoration: none;
+          color: #4a3fb3;
+        }
 
-
-
-
+        footer a:hover {
+          color: #4a3fb3;
+            text-decoration: underline;
+            opacity: 1;
+        }
 .StyleBodyCols {
 	font-size: 12px;
 	text-align: center;
@@ -94,8 +118,8 @@ filter: contrast(0.6);
 <div class="wrapper row1">
   <header id="header" class="clear">
     <div id="hgroup">
-      <h1> <a href="#"><span
-						class="Stylelog"><p>Université ABDELMALEK ESSAADI</p> Ecole Nationale des Sciences Appliquées d'Al Hoceima</span></a> </h1>
+      <h1> <span
+						class="Stylelog"><p>Université ABDELMALEK ESSAADI</p> Ecole Nationale des Sciences Appliquées d'Al Hoceima</span> </h1>
       <h3 class="logosstitre"><a href="index.html">Site Officiel de l'ENSA d'Al-Hoceima</a></h3>
     </div>
     <div class="fl_right">
@@ -226,170 +250,72 @@ filter: contrast(0.6);
         </div>
       </div>
     </section>
-    <div></div>
+   <!-- map-------------------------------------------------------------------------------------------------------------------------- -->
     <div id="homepage" class="clear">
       <!-- ########################################################################################## -->
-      <section class="two_third">
-        <ul class="clear" style="color: #333333;  font-family:Arial, Helvetica, sans-serif">
-          <li>
-            <article >
-              <figure> <a href="pages/presentation.html" > <section class="mainIcons" style="margin:0; padding : 0;" > <img src="images/ensah.png" width="117" height="115" alt="" style="border:0 ;  margin:0; " />  </section></a>
-
-
-                <figcaption>
-                  <h2 class="StyleBodyCols" style="color:#227539;margin:0;text-decoration:none"><a href="pages/presentation.html" style="color:#227539;text-decoration:none"> PRESENTATION</a></h2>
-                  <p style="text-align: justify; height:100px">Créée en 2008, l'Ecole
-                    Nationale des Sciences Appliquées d'Al Hoceima (ENSAH) est
-                    un établissement</p>
-                  <footer> <a href="pages/presentation.html">En savoir plus &raquo;</a> </footer>
-                </figcaption>
-              </figure>
-            </article>
-          </li>
-          <li>
-            <article>
-              <figure> <a href="pages/etudes.html"> <section class="mainIcons" style="margin:0; padding : 0;" > <img src="images/etudes.png" width="117" height="115" alt="" style="border:0 ; margin:0"></section></a>
-                <figcaption>
-                  <h2 class="StyleBodyCols" style="color:#cc8843; margin:0"><a href="pages/etudes.html" style="color:#cc8843;text-decoration:none">ETUDES</a></h2>
-                  <p style="text-align: justify; height:100px">Les études à l'ENSA
-                    d'Al-Hoceima durent cinq ans, réparties entre un cycle
-                    préparatoire de deux</p>
-                  <footer> <a href="pages/etudes.html">En savoir plus &raquo;</a> </footer>
-                </figcaption>
-              </figure>
-            </article>
-          </li>
-          <li>
-            <article>
-              <figure> <a href="http://ensah.ma/etudiants/emploisdutemps.php"> <section class="mainIcons" style="margin:0; padding : 0;" > <img src="images/emploitemps.png" width="117" height="115" alt="" style="border:0; margin:0"/></section></a>
-                <figcaption>
-                  <h2 class="StyleBodyCols"   style="color:#2697d2; margin:0"><a href="http://ensah.ma/etudiants/emploisdutemps.php" style="color:#2697d2;text-decoration:none">EMPLOI DU TEMPS</a></h2>
-                  <p style="text-align: justify; height:100px"> Les emplois du temps actualisés sont consultables sur notre site via le lien suivant.</p>
-                  <footer> <a href="http://ensah.ma/etudiants/emploisdutemps.php">En savoir plus &raquo;</a> </footer>
-                </figcaption>
-              </figure>
-            </article>
-          </li>
-          <li>
-            <article>
-              <figure> <a href="http://ensah.ma/news/upload/16/calendrier 2015_2016.pdf"> <section class="mainIcons" style="margin:0; padding : 0;" > <img src="images/calendrier.png" width="117" height="115" alt="" style="border:0; margin:0"></section></a>
-                <figcaption>
-                  <h2 class="StyleBodyCols" style="color:#5e8743; margin:0"><a href="http://ensah.ma/news/upload/16/calendrier 2015_2016.pdf" style="color:#5e8743;text-decoration:none">CALENDRIER</a></h2>
-                  <p style="text-align: justify; height:100px">Le calendrier académique
-                    détaillé de l’ENSA Al-Hoceima est consultable sur notre
-                    site via le lien suivant.</p>
-                  <footer> <a href="http://ensah.ma/news/upload/16/calendrier 2015_2016.pdf">En savoir plus
-                    &raquo;</a> </footer>
-                </figcaption>
-              </figure>
-            </article>
-          </li>
-        </ul>
-        <section class="blocevent">
-          <header style="color:#000000; font-family:Georgia  ; font-size:16px; font-weight:bold; line-height:normal; margin-top:4px"></header>
-          <article class="bordredzone">
-            <h3 style="color:#2697d2;background-color:"> <img src="images/fleche.png" style="margin-bottom:5px"> Événement à venir : Conférence Internationale ICCEM'2017 </h3>
-            <p style="font-family:Arial, Helvetica, sans-serif;color:#2697d2;"> L’Ecole Nationale des Sciences Appliquées d’Al-Hoceima organise en collaboration avec l’Ecole Supérieure de Technologie d’Oujda la première Conférence Internationale sur le Génie Civil et les Matériaux...<a href="http://ensah.ma/news/newsDetails.php?idnews=176">Lire plus &raquo;</a></p>
-          </article>
-        </section>
-      </section>
-      <!-- ########################################################################################## -->
-      <section class="one_third">
-        <h1> <a href="news/newsDetails.html">Actualités</a> </h1>
+    
+        <h1 style="text-align:justify; color: rgb(3, 10, 11);text-align: center; font-size: 20px;"> <span >ENSAH sur Maps</span>    </h1>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      
+    <iframe
+        id="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3221.722947043049!2d-3.933888684772234!3d35.24477918038705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd742a5c2f5c5b7b%3A0x5f5e5e5e5e5e5e5e!2sENSAH%20-%20%C3%89cole%20Nationale%20des%20Sciences%20Appliqu%C3%A9es%20d&#39;Al%20Hoceima!5e0!3m2!1sfr!2sma!4v1698765432105!5m2!1sfr!2sma"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+     
         
-<ul class="clear">
-
-
-
-<nav><ul><li><div style="text-align: justify;color:#333333; margin: 0px"><img src="images/blue_file.gif" style="margin-right: 10px" />Avis aux étudiants : Rappel concernant la date de début des cours<a href="news/newsDetailsb8cf.html?idnews=191"><em>
-							en savoir plus »<img src="news/img/new.gif"></em></a></div></li><li><div style="text-align: justify;color:#333333; margin: 0px"><img src="images/blue_file.gif" style="margin-right: 10px" />Avis aux étudiants de deuxième année Cycle Préparatoire : Examen module Langue et communication 3<a href="news/newsDetailsbf4e.html?idnews=190"><em>
-							en savoir plus »<img src="news/img/new.gif"></em></a></div></li><li><div style="text-align: justify;color:#333333; margin: 0px"><img src="images/blue_file.gif" style="margin-right: 10px" />Avis aux étudiants du CP1 : Mise à jour de l'emplois du temps<a href="news/newsDetails3355.html?idnews=189"><em>
-							... en savoir plus » </em></a></div></li><li><div style="text-align: justify;color:#333333; margin: 0px"><img src="images/blue_file.gif" style="margin-right: 10px" />Avis aux étudiants : Mise à jour  des emplois du temps<a href="news/newsDetails4491.html?idnews=188"><em>
-							... en savoir plus » </em></a></div></li><li><div style="text-align: justify;color:#333333; margin: 0px"><img src="images/blue_file.gif" style="margin-right: 10px" />Avis aux étudiants : Emplois du Temps du Deuxième Semestre<a href="news/newsDetailsfc2f.html?idnews=186"><em>
-							... en savoir plus » </em></a></div></li></ul></nav>
-
-
-
-
-
-
-
-
-
-
-
-
-	<li>
-		<p align="right">
-			<a href="news/newsDetails.html"><em> Plus d'actualités »</em></a>
-		</p>
-	</li>
-
-</ul>      </section>
-      <!-- ########################################################################################## -->
     </div>
-    <!-- ########################################################################################## -->
-    <!-- ########################################################################################## -->
-    <!-- / content body -->
-  </div>
-</div>
-<!-- ### Footer ### -->
-<div class="wrapper row4">
-  <div id="footer" class="clear">
-    <!-- Section One -->
-    <section class="one_quarter first">
-      <h2 class="title" >Contactez nous</h2>
-      <p>
-		Ecole Nationale des Sciences Appliquées
-		d'Al Hoceima BP <span style="font-family:Arial, Helvetica, sans-serif">03</span>, Ajdir Al-Hoceima<br> 	  
-	    Tel: <span style="font-family:Arial, Helvetica, sans-serif"> +212(0) 539 80 57 14</span><br>
-        Fax: <span style="font-family:Arial, Helvetica, sans-serif"> +212(0) 539 80 57 13</span><br>
-	  </p>
-    </section>
-    <!-- Section Two -->
-    <section class="one_quarter">
-      <h2 class="title">Liens utiles</h2>
-      <nav>
-        <ul>
-          <li class="first"><a href="http://www.ump.ma/" target="_blank">Site de l'université</a></li>
-          <li><a href="http://www.enssup.gov.ma/"  target="_blank">Enseignement supérieur</a></li>
-          <li><a href="http://www.enssup.gov.ma/sites/default/files/NOTES/2016/11/3394/Calendrier_Vacances_2016_2017.pdf" target="_blank">Tableau des vacances</a></li>
-          <li><a href="http://www.cnrst.ma/" target="_blank">CNRST</a></li>
-        </ul>
-      </nav>
-    </section>
-    <!-- Section Three -->
-    <section class="one_quarter">
-       <h2 class="title">Accès rapide</h2>
-      <nav>
-        <ul>
-          <li class="first"><a href="http://ensah.ma/pages/planacces.php">Plan d'accès</a></li>
-          <li><a href="pages/etudes.html">Les études </a></li>
-          <li><a href="http://ensah.ma/biblio/">Bibliothèque</a></li>
-          <li><a href="http://ensah.ma/etudiants/">Espace étudiants</a></li>
-        </ul>
-      </nav>
-    </section>
-    <!-- Section Four -->
-    <section class="one_quarter">
-      <h2 class="title">ENSAH SUR FACEBOOK</h2>
-<div class="fb-like" data-href="https://www.facebook.com/ensaalhoceima" data-width="150" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-    </section>
-    <!-- / Section -->
-  </div>
-</div>
-<!-- Copyright -->
-<div class="wrapper">
-  <footer id="copyright" class="clear">
-    <p class="fl_left"><span style="font-family:Arial, Helvetica, sans-serif">Copyright &copy; 2014 - ENSA Al-Hoceima | Tous droits réservés</span></p>
-    <p class="fl_right"><em>Site crée par Tarik BOUDAA </em></p>
-  </footer>
-</div>
-<script>
-$(document).ready(function () {
-    $("#nl_name, #nl_email").defaultvalue("Nom", "Email");
-});
-</script></body>
 
-<!-- Mirrored from www.ensah.ma/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Feb 2017 13:50:48 GMT -->
-</html>
+
+
+    <!-- Footer -->
+    <footer  class="mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contacts de l'école -->
+                <div class="col-md-4">
+                    <h4 >Contacts</h4>
+                    <ul class="list-unstyled">
+                        <li><strong>Adresse :</strong> Al Hoceima, Maroc</li>
+                        <li><strong>Téléphone :</strong>  +212(0) 539 80 57 12   </li>
+                          <li><strong>Fax :</strong> +212(0) 539 80 57 13 </li>
+                        <li><strong>Email :</strong> <a href="mailto:contact@ensah.ma">contact@ensah.ma</a></li>
+                        <li><strong>Site web :</strong> <a href="https://www.ensah.ma" target="_blank">www.ensah.ma</a></li>
+                    </ul>
+                </div>
+
+                <!-- Informations sur les départements -->
+                <div class="col-md-4">
+                    <h4>Départements</h4>
+                    <ul class="list-unstyled">
+                        <li>Génie Informatique</li>
+                        <li>Génie Analyse de donnes</li>
+                        <li>Génie Transformation digital & IA</li>
+                        <li>Génie Civil</li>
+                        <li>Génie énergétique & énergies renouvelables </li>
+                        <li>Génie Mécanique</li>
+                        <li>Génie de l’Eau & de l’Environnement</li>
+                    </ul>
+                </div>
+
+               
+                <div class="col-md-4">
+                    <h4>LIENS UTILES</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.ensah.ma" target="_blank">Site officiel</a></li>
+                        <li><a href="http://www.uae.ma/website/" target="_blank">Site de l'université</a></li>
+                        <li><a href="https://www.cnrst.ma/fr/" target="_blank">CNRST</a></li>
+                        <li><a href="https://www.fsth.ma/" target="_blank">FST Al Hoceima</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+  
+</body>
