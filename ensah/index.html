@@ -52,7 +52,7 @@ $(function () {
 <style>
   #map {
       width:  150%;
-      height: 600px;
+      height: 300px;
       border: 1px;
       border-radius: 8px;
   }
@@ -225,90 +225,149 @@ $(function () {
 /*login style*/
   /* Conteneur principal : mettre les deux blocs côte à côte */
 /* Conteneur principal : mettre la carte et le login côte à côte */
+:root {
+    --bleu-ensah: #1a73e8; /* Bleu principal */
+    --bleu-clair: #63a4ff; /* Bleu clair pour les effets hover */
+    --gris-fonce: #4a4a4a; /* Gris foncé pour les textes */
+    --gris-clair: #f8f9fa; /* Gris très clair pour le fond */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--gris-clair);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
 .map-login-container {
     display: flex;
-    justify-content: space-between; /* Centre les éléments horizontalement */
-    align-items: center; /* Aligne verticalement */
-    gap: 30px; /* Ajoute un espace entre la carte et le login */
-    max-width: 1100px; /* Largeur max pour éviter que ça s'étire trop */
-    margin: auto; /* Centre le bloc sur la page */
-    padding: 20px;
+    gap: 2rem; /* Espace entre la carte et le formulaire */
+    max-width: 1200px;
+    width: 100%;
 }
 
-/* Ajustement de la carte */
+/* Section de la carte (à gauche) */
 #homepage {
-    flex: 1; /* Permet d'équilibrer la largeur avec le login */
-    max-width: 50%; /* Pour assurer que la carte ne prend pas toute la place */
-}
-
-/* Ajustement du formulaire de connexion */
-.login-page {
-    flex: 1; /* Prend la même largeur que la carte */
-    max-width: 40%; /* Assure une symétrie avec la carte */
-    display: flex;
-    justify-content: flex-end;
-    margin-right: -150px;
-    animation: fadeIn 0.6s ease-in;
-}
-
-/* Boîte du formulaire */
-.form {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(245, 242, 242, 0.932);
-    transition: transform 0.3s ease;
-    width: 100%;
-    max-width: 400px; /* Ajusté pour être similaire à la carte */
-}
-
-/* Effet hover */
-.form:hover {
-    transform: translateY(-4px);
-}
-
-/* Titre et logo */
-.form-header {
-    color: #0b56a1; /* Bleu ENSAH */
-    font-weight: bold;
-    text-align: center; /* Centrage du texte */
-    font-size: 1.8rem; /* Ajustement de la taille */
-    background-color:transparent; /* Suppression du fond gris */
-    padding: 10px 0;
-}
-
-.form-header img {
-    width: 80px;
-    margin-bottom: 1rem;
-}
-.form-header h1 {
-    color: #1976D2 !important;
-    font-weight: 500;
-    margin: 0 0 0.5rem;
-    text-align: center;
-    font-size: 1.8rem;
-    background-color:transparent !important;
-    border: none !important; /* Assure qu'il n'y a pas de bordure */
-    box-shadow: none !important;
-}
-.form-header p {
-    color: #666;
-    font-size: 0.9rem;
-}
-
-/* Champs du formulaire */
-.form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 1.5rem;
-    border: 2px solid #e3f2fd;
+    flex: 10; /* Prend 30% de l'espace disponible */
+    max-width: 50%; /* Limite la largeur de la carte */
+    background: white;
     border-radius: 8px;
-    font-size: 15px;
-    background: #f5fbff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
+#homepage h1 {
+    text-align: center;
+    color: var(--bleu-ensah);
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+#map {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+/* Section du formulaire de connexion (à droite) */
+.conteneur {
+    flex: 2; /* Prend 70% de l'espace disponible */
+    max-width: 50%; /* Limite la largeur du formulaire */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.banniere {
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banniere img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.contenu {
+    padding: 2rem;
+}
+
+.en-tete {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.titre-principal {
+    color: var(--bleu-ensah);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.groupe-form {
+    margin-bottom: 1.5rem;
+}
+
+.input-texte {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: var(--gris-fonce);
+}
+
+.input-texte::placeholder {
+    color: #aaa;
+}
+
+.liens-utiles {
+    text-align: center;
+    margin: 1.5rem 0;
+    color: var(--bleu-ensah);
+}
+
+.liens-utiles a {
+    color: var(--bleu-ensah);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.liens-utiles a:hover {
+    color: var(--bleu-clair);
+}
+
+.bouton-connexion {
+    width: 100%;
+    padding: 12px;
+    background: var(--bleu-ensah);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.bouton-connexion:hover {
+    background: var(--bleu-clair);
+
+  
 /* Placeholder */
 .form input::placeholder {
     color: #90a4ae;
@@ -516,66 +575,69 @@ $(function () {
           Cette dernière, pouvant héberger jusqu'à 500 étudiants et étudiantes, offre un cadre propice aux études et à la vie étudiante.</p>
     </section>
    <!-- map-------------------------------------------------------------------------------------------------------------------------- -->
-  <div class="map-login-container">
-   <div id="homepage" >
-      <!-- ########################################################################################## -->
-    
-        <h1 style="text-align:justify; color: rgb(48, 180, 201); font-size: 20px;"> <span >  <strong>ENSAH sur Maps</strong>  </span>    </h1>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-      
+   <div class="map-login-container">
+    <!-- Section de la carte (à gauche) -->
+    <div id="homepage">
+        <h1>ENSAH sur Maps</h1>
         <iframe
-        id="map"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.722947043049!2d-3.861719!3d35.171984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd742a5c2f5c5b7b%3A0x5f5e5e5e5e5e5e5e!2sÉcole+Nationale+des+Sciences+Appliquées+d'Al+Hoceima!5e0!3m2!1sfr!2sma!4v1698765432105!5m2!1sfr!2sma"
-        width="100%"
-        height="450"
-        style="border: 1px;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>    
+            id="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.722947043049!2d-3.861719!3d35.171984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd742a5c2f5c5b7b%3A0x5f5e5e5e5e5e5e5e!2sÉcole+Nationale+des+Sciences+Appliquées+d'Al+Hoceima!5e0!3m2!1sfr!2sma!4v1698765432105!5m2!1sfr!2sma"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </div>
-    <div class="login-page">
-        <div class="form">
-            <div class="form-header">
-                <img src="https://cdn-icons-png.flaticon.com/512/638/638032.png" alt="Logo Université">
-                <h1 >Portail eServices</h1>
-                <p>Connectez-vous avec vos identifiants institutionnels</p>
+
+    <!-- Section du formulaire de connexion (à droite) -->
+    <div class="conteneur">
+        <div class="banniere">
+            <img src="images/K.png" alt="En-tête e-Services ENSAH">
+        </div>
+        
+        <div class="contenu">
+            <div class="en-tete">
+                <h1 class="titre-principal">LOGIN</h1>
             </div>
 
-            <form class="login-form" method="POST" action="login.php">
-                <input 
-                    type="email" 
-                    name="email"
-                    placeholder="utilisateur@etu.uae.ac.ma" 
-                    pattern="[a-zA-Z0-9._%+-]+@etu\.uae\.ac\.ma" 
-                    title="Email institutionnel requis"
-                    required
-                />
-                <input 
-                    type="password" 
-                    name="password" 
-                    placeholder="••••••••" 
-                    minlength="8"
-                    required
-                />
-                <button type="submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    Connexion
-                </button>
-            </form>
-
-            <div class="form-footer">
-                <a href="mailto:support@uae.ac.ma">Assistance technique</a>
-                <div style="margin-top: 0.8rem; color: #1976D2;">
-                     Ecole Nationale des Sciences Appliquées d'Al Hoceima
+            <form>
+                <div class="groupe-form">
+                    <label>Identifiant institutionnel</label>
+                    <input 
+                        type="email" 
+                        class="input-texte"
+                        placeholder="utilisateur@etu.uae.ac.ma"
+                        pattern="[a-z]+\.[a-z]+@etu\.uae\.ac\.ma"
+                        title="Format : utilisateur@etu.uae.ac.ma"
+                        required
+                    >
                 </div>
-            </div>
+
+                <div class="groupe-form">
+                    <label>Mot de passe</label>
+                    <input 
+                        type="password" 
+                        class="input-texte"
+                        placeholder="••••••••"
+                        minlength="8"
+                        required
+                    >
+                </div>
+
+                <div class="liens-utiles">
+                    <a href="#">Aide</a> | 
+                    <a href="#">Mot de passe oublié ?</a>
+                </div>
+
+                <button type="submit" class="bouton-connexion">Se Connecter</button>
+            </form>
         </div>
     </div>
-  </div>
+</div>
+</body>
+</html>
 
 
 
