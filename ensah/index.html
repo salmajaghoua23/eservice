@@ -51,393 +51,197 @@ $(function () {
 
 
 <style>
+  /* Styles CSS corrigés */
+  html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
   #map {
-      width:  150%;
-<<<<<<< HEAD
-      height: 300px;
-=======
-      height: 400px;
->>>>>>> 80cb70a5c6bb2d6e4dbf896b97d5c2325af88c1e
-      border: 1px;
-      border-radius: 8px;
+    width: 100%;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
   }
 
   footer {
-      background-color: darkblue;
-      color: white;
-      padding: 40px 0;
-      margin-top: 20px;
-      width: 100vmax;
-      position: relative;
-      margin-left:-215px;
-      right:-20px;
+    background-color: darkblue;
+    color: white;
+    padding: 40px 0;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
   }
 
   footer a {
-      text-decoration: none;
-      color: #4a3fb3;
+    color: #4a3fb3;
+    text-decoration: none;
   }
 
   footer a:hover {
-      color: #4a3fb3;
-      text-decoration: underline;
-      opacity: 1;
+    color: #4a3fb3;
+    text-decoration: underline;
   }
+
   .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 0;
+    flex-wrap: wrap;
+  }
+  #hgroup {
+    display: flex;
+    align-items: center; /* Centrer verticalement les éléments */
+    gap: 20px; /* Espacement entre l'image et le texte */
   }
   .logo-left img {
-    position: absolute;
-    top: 10px;
-    left:20px;
-    width: 120px; /* Ajuste selon besoin */
+    width: 120px;
+    height: auto;
   }
-/* Style du logo ENSAH droit */
-  .logo-right {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    width:200px;
+
+  .logo-right img {
+    width: 200px;
+    height: auto;
   }
-  .StyleBodyCols {
-      font-size: 12px;
-      text-align: center;
-  }
+
   .Stylelog {
     font-family: 'Arial', sans-serif;
-    color: #2017a3; /* Bleu vif */
+    color: #2017a3;
     font-weight: bold;
     text-align: left;
     line-height: 1.2;
   }
+
   .Stylelog p {
     margin: 0;
     padding: 0;
   }
+
   .Stylelog p:first-child {
-    font-size: 24px; /* Taille plus grande pour "Université" */
-    font-weight: bold;
+    font-size: 24px;
   }
+
   .Stylelog p:nth-child(2) {
-    font-size: 18px; /* Taille intermédiaire pour "ABDELMALEK ESSAADI" */
-    font-weight: bold;
+    font-size: 18px;
   }
+
   .Stylelog p:nth-child(3) {
-    font-size: 16px; /* Taille normale pour le reste */
-    font-weight: normal;
-  }
-  h1 {
-    background-color: transparent; /* Suppression de l'arrière-plan */
-    padding: 10px 0; /* Ajustement de l'espacement */
-    text-align: left;
-  }
-  #hgroup{
-    display: flex;
-  }
-  .mainIcons {
-      margin: 0;
-      padding: 0;
+    font-size: 16px;
   }
 
-  .mainIcons img {
-      border: 0;
-      margin: 0;
-  }
-
-  .mainIcons img:hover {
-      border: 0;
-      margin: 0;
-      -webkit-filter: grayscale(50%);
-      filter: contrast(0.6);
-      -webkit-filter: contrast(0.6);
-      -moz-filter: contrast(0.6);
-      -o-filter: contrast(0.6);
-      -ms-filter: contrast(0.6);
-  }
-  /* Style pour le menu */
-  /* Conteneur pour aligner le menu et la barre de recherche */
   .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Le menu à gauche, la recherche à droite */
+    justify-content: space-between;
     padding: 10px 20px;
-    text-transform: capitalize
   }
-/* Style du menu */
+
   #topnav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
   }
+
   #topnav ul li {
     margin-right: 20px;
   }
+
   #topnav ul li a {
     text-decoration: none;
-    color: white; /* Texte en blanc */
+    color: white;
     font-size: 15px;
     font-weight: bold;
-    padding: 10px 15px; /* Espacement pour un meilleur rendu */
+    padding: 10px 15px;
     transition: 0.3s;
-    background: none; /* Suppression du fond blanc */
-    border-radius: 0; /* Supprime tout arrondi */
   }
+
   #topnav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
   }
-/* Style de la barre de recherche */
-  .fl_right {
+
+  .map-login-container {
     display: flex;
-    align-items: center;
-  }
-  .input-group {
-    width: 350px; /* Ajuste la longueur totale du champ de recherche */
-}
-
-.form-control {
-    flex-grow: 1; /* Permet au champ de texte de prendre plus de place */
-}
-
-.input-group-append button {
-    width: 80px;
-    height: 40px;
-}
-.fas.fa-search {
-    font-size: 16px; /* Ajuste la taille de l'icône */
-    color: white; /* Assure que l'icône est visible */
-}
-
-  html {
-    scroll-behavior: smooth;
-  }
-/*login style*/
-  /* Conteneur principal : mettre les deux blocs côte à côte */
-/* Conteneur principal : mettre la carte et le login côte à côte */
-:root {
-    --bleu-ensah: #1a73e8; /* Bleu principal */
-    --bleu-clair: #63a4ff; /* Bleu clair pour les effets hover */
-    --gris-fonce: #4a4a4a; /* Gris foncé pour les textes */
-    --gris-clair: #f8f9fa; /* Gris très clair pour le fond */
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
-body {
-    min-height: 100vh;
-    background: var(--gris-clair);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-}
-
-.map-login-container {
-    display: flex;
-    gap: 2rem; /* Espace entre la carte et le formulaire */
+    gap: 2rem;
     max-width: 1200px;
     width: 100%;
-}
+    margin: 20px auto;
+  }
 
-/* Section de la carte (à gauche) */
-#homepage {
-    flex: 10; /* Prend 30% de l'espace disponible */
-    max-width: 50%; /* Limite la largeur de la carte */
+  #homepage {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .conteneur {
+    flex: 1;
+    max-width: 50%;
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
+  }
 
-#homepage h1 {
-    text-align: center;
-    color: var(--bleu-ensah);
-    font-size: 1.5rem;
-    padding: 1rem;
-}
-
-#map {
+  .banniere img {
     width: 100%;
-    height: 450px;
-    border: none;
-}
+    height: auto;
+  }
 
-/* Section du formulaire de connexion (à droite) */
-.conteneur {
-    flex: 2; /* Prend 70% de l'espace disponible */
-    max-width: 50%; /* Limite la largeur du formulaire */
-    background: rgb(255, 255, 255);
-    border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.banniere {
-    height: 110px;
-    position: relative;
-    overflow: hidden;
-}
-
-.banniere img {
-    width: 95%;
-    height: 95%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.contenu {
+  .contenu {
     padding: 2rem;
-}
+  }
 
-.en-tete {
-    text-align: center;
-    margin-bottom: 2rem;
-}
+  .titre-principal {
+    color: #1a73e8;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
 
-.titre-principal {
-    color: var(--bleu-ensah);
-    font-size: 2.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.groupe-form {
-    margin-bottom: 1.5rem;
-}
-
-.input-texte {
+  .input-texte {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
     margin-top: 0.5rem;
-    color: var(--gris-fonce);
-}
+  }
 
-.input-texte::placeholder {
-    color: #aaaaaa;
-}
-
-.liens-utiles {
-    text-align: center;
-    margin: 1.5rem 0;
-    color: var(--bleu-ensah);
-}
-
-.liens-utiles a {
-    color: var(--bleu-ensah);
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-.liens-utiles a:hover {
-    color: var(--bleu-clair);
-}
-
-.bouton-connexion {
+  .bouton-connexion {
     width: 100%;
     padding: 12px;
-    background: var(--bleu-ensah);
+    background: #1a73e8;
     color: white;
     border: none;
     border-radius: 4px;
     font-size: 1.1rem;
     cursor: pointer;
     transition: background 0.3s ease;
-}
+  }
 
-.bouton-connexion:hover {
-    background: var(--bleu-clair);
+  .bouton-connexion:hover {
+    background: #63a4ff;
+  }
 
-  } 
-/* Placeholder */
-.form input::placeholder {
-    color: #90a4ae;
-}
-
-/* Focus */
-.form input:focus {
-    border-color: #2196F3;
-    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
-    transform: scale(1.02);
-}
-
-/* Bouton de connexion */
-.form button {
-    background: #2196F3;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.form button:hover {
-    background: #1976D2;
-    box-shadow: 0 6px 16px rgba(25, 118, 210, 0.25);
-    transform: translateY(-2px);
-}
-
-/* Footer du formulaire */
-.form-footer {
-    text-align: center;
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
-    color: #757575;
-}
-
-.form-footer a {
-    color: #2196F3;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-/* Adaptation pour mobile */
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
     .map-login-container {
-        flex-direction: column; /* Passe en colonne */
-        align-items: center;
+      flex-direction: column;
     }
 
-    #homepage, .login-page {
-        max-width: 100%;
+    #homepage, .conteneur {
+      max-width: 100%;
     }
-
-    .form {
-        max-width: 100%;
-    }
-}
-
-/* Animation pour une meilleure apparence */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-/*style de pesentation*/
-#presentation h1{
-  color:#0f0a57;
-}
-#presentation p{
-  color:#161515;
-  font-size: 18px;
-}
+  }
 </style>
 </head>
 <body>
