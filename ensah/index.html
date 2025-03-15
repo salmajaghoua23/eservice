@@ -17,6 +17,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <link rel="stylesheet" href="styles/ie.css" type="text/css">
 <script src="scripts/ie/html5shiv.min.js"></script>
@@ -52,7 +53,11 @@ $(function () {
 <style>
   #map {
       width:  150%;
+<<<<<<< HEAD
       height: 300px;
+=======
+      height: 400px;
+>>>>>>> 80cb70a5c6bb2d6e4dbf896b97d5c2325af88c1e
       border: 1px;
       border-radius: 8px;
   }
@@ -174,7 +179,7 @@ $(function () {
   #topnav ul li a {
     text-decoration: none;
     color: white; /* Texte en blanc */
-    font-size: 25px;
+    font-size: 15px;
     font-weight: bold;
     padding: 10px 15px; /* Espacement pour un meilleur rendu */
     transition: 0.3s;
@@ -189,36 +194,23 @@ $(function () {
     display: flex;
     align-items: center;
   }
-  #searchform {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    padding: 3px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    width: 400px;
-  }
-  #searchform input[type="text"] {
-    border: none;
-    outline: none;
-    padding: 5px;
-    width: 100%;
-    font-size: 14px;
-    flex-grow: 1;
-    color:#2017a3;
-  }
-  #searchform input[type="submit"] {
-    background-color: #0066cc;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: 0.3s;
-    margin-left: 290px; 
-  }
-  #searchform input[type="submit"]:hover {
-    background-color: #004080;
-  }
+  .input-group {
+    width: 350px; /* Ajuste la longueur totale du champ de recherche */
+}
+
+.form-control {
+    flex-grow: 1; /* Permet au champ de texte de prendre plus de place */
+}
+
+.input-group-append button {
+    width: 80px;
+    height: 40px;
+}
+.fas.fa-search {
+    font-size: 16px; /* Ajuste la taille de l'icône */
+    color: white; /* Assure que l'icône est visible */
+}
+
   html {
     scroll-behavior: smooth;
   }
@@ -490,15 +482,55 @@ body {
         </ul>
       </nav>
       <div class="fl_right">
-        <form id="searchform" action="http://www.google.com/cse">
-          <fieldset>
-            <input type="hidden" name="cx" value="000996684662007214448:snj8osbs_lw" />
-            <input type="hidden" name="ie" value="UTF-8" />
-            <input class="formsearch" type="text" value="Rechercher sur notre site…" name="q" id="q"
-                   onFocus="this.value=(this.value=='Rechercher sur notre site…')? '' : this.value ;">
-            <input type="submit" id="sf_submit" name="sa" value="Rechercher">
-          </fieldset>
-        </form>
+                          <!-- Sidebar Toggle (Topbar) -->
+                          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+    
+                        <!-- Topbar Search -->
+                        <form
+                            class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                    aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                  <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                
+                                </div>
+                            </div>
+                        </form>
+    
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+    
+                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                            <li class="nav-item dropdown no-arrow d-sm-none">
+                                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </a>
+                                <!-- Dropdown - Messages -->
+                                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                    aria-labelledby="searchDropdown">
+                                    <form class="form-inline mr-auto w-100 navbar-search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control bg-light border-0 small"
+                                                placeholder="Search for..." aria-label="Search"
+                                                aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">
+                                                    <i class="fas fa-search fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+    
+    </form>
+
       </div>
     </div>
   </div>
