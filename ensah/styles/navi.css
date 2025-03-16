@@ -1,0 +1,40 @@
+/*
+HTML 5 Template Name: Symfoni
+File: Navigation CSS
+Author: OS Templates
+Author URI: http://www.os-templates.com/
+Licence: <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>
+*/
+
+nav ul{margin:0; padding:0; list-style:none;}
+
+/* ----------------------------------------------Top Navigation-------------------------------------*/
+
+.wrapper #topnav{padding:0 0 30px 0;}
+#topnav ul{}
+#topnav ul li{display:inline-block; margin:0 0 0 15px; padding:0 0 0 15px; border-left:1px dotted #2BBEDD; font-weight:bold; color:#FF0000; font-family:Arial, Helvetica, sans-serif}
+#topnav ul li:first-child{margin:0; padding:0; border-left:none;}
+#topnav ul li li{margin:0; padding:0; border:none; text-align:left; font-style:normal;}
+#topnav ul li li:first-child{margin:0;}
+#topnav ul li span{display:block; margin:5px 0 0 0; padding:0; font-size:12px; font-family:Arial,Helvetica,sans-serif; text-transform:lowercase;}
+#topnav ul li a:link, #topnav ul li a:visited, #topnav ul li a:hover{display:block; margin:0; padding:0; color:#5b5b5b; background-color:#FFFFFF;}
+#topnav ul li a:hover, #topnav ul li.active a{color:#2bbedd; background-color:#FFFFFF;}
+#topnav ul li ul li a:link, #topnav ul li ul li a:visited{width:150px; float:none; margin:0; padding:7px 10px; text-transform:none; font-weight:normal; color:#2C2C2C; background-color:#F9F9F9; border:none;}
+#topnav ul li ul li a:hover{color:#2bbedd; background-color:#F9F9F9; border:none;}
+#topnav ul ul{z-index:9999; position:absolute; left:-999em; height:auto; width:170px; padding:5px 0 0 0; border-bottom:1px solid #D5D5D5;}
+#topnav ul ul a{width:140px;}
+#topnav ul li:hover ul{left:auto;}
+#topnav ul li:hover{position:static;}
+
+/* ----------------------------------------------Column Navigation-------------------------------------*/
+#container aside nav{display:block; width:300px; margin-bottom:30px;}
+#container aside nav ul{margin:0; padding:0; list-style:none;}
+#container aside nav li{margin:0 0 3px 0; padding:0;}
+#container aside nav ul ul, #container aside nav ul ul ul, #container aside nav ul ul ul ul, #container aside nav ul ul ul ul ul{border-top:none; padding-top:0;}
+#container aside nav a{display:block; margin:0; padding:5px 10px 5px 20px; color:#2C2C2C; background:url("../images/blue_file.gif") no-repeat 10px center #F1F1F1; text-decoration:none; border-bottom:1px dotted #2C2C2C;}
+#container aside nav a:hover{color:#2bbedd; background-color:#F1F1F1;}
+#container aside nav ul ul a, #container aside nav ul ul ul a, #container aside nav ul ul ul ul a, #container aside nav ul ul ul ul ul a{background:url("../images/black_file.gif") no-repeat #F1F1F1;}
+#container aside nav ul ul a{padding-left:40px; background-position:30px center;}
+#container aside nav ul ul ul a{padding-left:50px; background-position:40px center;}
+#container aside nav ul ul ul ul a{padding-left:60px; background-position:50px center;}
+#container aside nav ul ul ul ul ul a{padding-left:70px; background-position:60px center;}

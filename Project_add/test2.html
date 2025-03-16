@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <title>ENSA Al Hoceima | Site Officiel de l'Ecole Nationale des Sciences Appliquées d'Al-Hoceima</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Site de l'école nationale des Sciences Appliquées d'Al-Hoceima (ENSAH)" />
+  <meta name="keywords" content="Université, Mohammed Premier, Oujda, ensah, Université Mohammed 1, Université Mohamed 1, Université Mohammed Premier, Al-Hoceima, Alhoceima, Al hoceima, ENSAH, ENSA, ingénieurs, cycle ingénieur, génie civil, informatique, environnement" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    /* Styles généraux */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Menu vertical */
+    #sidebar {
+      width: 250px;
+      background:#2466e0;
+      color: white;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #sidebar .logo {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    #sidebar .logo img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    #sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #sidebar ul li {
+      margin-bottom: 15px;
+    }
+
+    #sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    #sidebar ul li a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Contenu principal */
+    #content {
+      flex: 1;
+      padding: 20px;
+      background: #f8f9fa;
+    }
+
+    /* Présentation */
+    #presentation {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    #presentation h1 {
+      color: #1a73e8;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #presentation p {
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Départements et filières */
+    #departements {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    #departements h2 {
+      color: #1a73e8;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    #departements ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #departements ul li {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    /* Système d'étude */
+    #systeme-etude {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    #systeme-etude h2 {
+      color: #1a73e8;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    #systeme-etude p {
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Carte */
+    #map {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* Formulaire d'inscription */
+    #inscription {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    #inscription h2 {
+      color: #1a73e8;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    #inscription input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #inscription button {
+      width: 100%;
+      padding: 10px;
+      background: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #inscription button:hover {
+      background: #63a4ff;
+    }
+
+    /* Footer */
+    footer {
+      background: rgb(11, 0, 163);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: #7972b0;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      #sidebar {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+      }
+
+      #content {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+    <!--End of Tawk.to Script-->
+  <!-- Menu vertical -->
+  <div id="sidebar">
+    <div class="logo">
+      <img src="../webimages/image1.jfif" alt="Logo ENSAH">
+    </div>
+    <ul>
+      <li><a href="#presentation">Accueil</a></li>
+      <li><a href="#departements">Départements</a></li>
+      <li><a href="#systeme-etude">Système d'étude</a></li>
+      <li><a href="#map">Localisation</a></li>
+      <li><a href="#inscription">Inscription</a></li>
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Contenu principal -->
+  <div id="content">
+    <!-- Présentation -->
+    <section id="presentation">
+      <h1>ENSA Al-Hoceima</h1>
+      <p>
+        L'École Nationale des Sciences Appliquées d'Al Hoceima (ENSAH), créée en 2008, est un établissement public d'enseignement supérieur affilié à l'Université Abdelmalek Essaadi. Elle offre des formations d'ingénieurs dans plusieurs filières.
+      </p>
+    </section>
+
+    <!-- Départements et filières -->
+    <section id="departements">
+      <h2>Départements et Filières</h2>
+      <ol>
+        <li>Génie Informatique</li>
+        <li>Génie Analyse de donnes</li>
+        <li>Génie Transformation digital & IA</li>
+        <li>Génie Civil</li>
+        <li>Génie énergétique & énergies renouvelables </li>
+        <li>Génie Mécanique</li>
+        <li>Génie de l’Eau & de l’Environnement</li>
+      </ol>
+    </section>
+
+    <!-- Système d'étude -->
+    <section id="systeme-etude">
+      <h2>Système d'Étude</h2>
+      <p>
+        L'ENSAH propose un système d'étude basé sur des modules semestriels, avec des cours théoriques, des travaux pratiques et des projets. Les étudiants bénéficient également de stages en entreprise pour une immersion professionnelle.
+      </p>
+      <p>
+        Les programmes sont conçus pour répondre aux besoins du marché du travail, en mettant l'accent sur l'innovation et la recherche.
+      </p>
+    </section>
+
+    <!-- Carte -->
+    <section id="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.722947043049!2d-3.861719!3d35.171984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd742a5c2f5c5b7b%3A0x5f5e5e5e5e5e5e5e!2sÉcole+Nationale+des+Sciences+Appliquées+d'Al+Hoceima!5e0!3m2!1sfr!2sma!4v1698765432105!5m2!1sfr!2sma"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </section>
+
+    <!-- Formulaire d'inscription -->
+    <form action="" method="post">
+    <section id="inscription">
+      <h2>Inscription</h2>
+     
+     <input type="email" name="email" class="input-texte"   placeholder="utilisateur@etu.ac.ma" pattern="[a-z]+\.[a-z]+@etu\.uae\.ac\." title=" Format : utilisateur@etu.ac.ma" 
+      required>
+      <input type="password" name="passwrd" class="input-texte"placeholder="••••••••"minlength="8" required >
+      <div class="liens-utiles">
+        <a href="#">Aide</a> | 
+        <a href="#">Mot de passe oublié ?</a>
+    </div>
+    <button type="submit" class="bouton-connexion">Se Connecter</button>
+    </section>
+   </form>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div>
+      <h3>Contacts</h3>
+
+     <ul>    
+      <li><strong>Adresse :</strong> Al Hoceima, Maroc</li>
+      <li><strong>Téléphone :</strong>  +212(0) 539 80 57 12 </li>
+       <li><strong>Fax :</strong> +212(0) 539 80 57 13 </li>
+      <li><strong>Email :</strong> <a href="mailto:contact@ensah.ma">contact@ensah.ma</a></li>
+       <li><strong>Site web :</strong> <a href="https://www.ensah.ma" target="_blank">www.ensah.ma</a></li>
+       </ul>
+    </div>
+                 <div>
+                    <h4 ><strong>Liens utiles</strong></h4>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.ensah.ma" target="_blank">Site officiel</a></li>
+                        <li><a href="http://www.uae.ma/website/" target="_blank">Site de l'université</a></li>
+                        <li><a href="https://www.cnrst.ma/fr/" target="_blank">CNRST</a></li>
+                        <li><a href="https://www.fsth.ma/" target="_blank">FST Al Hoceima</a></li>
+                        
+                    </ul>
+                  </div>
+    <div>
+      <h3>Réseaux Sociaux</h3>
+      <p>
+        <a href="https://twitter.com/ensaalhoceima" target="_blank"><i class="fab fa-twitter"></i> Twitter</a> |
+        <a href="https://www.facebook.com/ensaalhoceima" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a> |
+        <a href="https://www.linkedin.com/school/ensaalhoceima" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Intégration du chatbot Tawk.to -->
+  <!--Start of Tawk.to Script-->
+
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/67d60457e18213190b13fe55/1ime01tj6';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+</body>
+
+</html>

@@ -5,11 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+<<<<<<< HEAD
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
+=======
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "c:\\xampp\\htdocs\\Projet_web\\ensah\\index.html"
+>>>>>>> 40fadf2bc9d519984b68581828da29c0eb263ed7
         }
     ]
 }

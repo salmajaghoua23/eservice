@@ -1,0 +1,31 @@
+/*
+HTML 5 Template Name: Symfoni
+File: Homepage CSS
+Author: OS Templates
+Author URI: http://www.os-templates.com/
+Licence: <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>
+*/
+
+#container #homepage{display:block; width:100%;}
+
+#container #homepage .two_third{margin-bottom:0;}
+#container #homepage .two_third ul{margin:0; padding:0; list-style:none;}
+#container #homepage .two_third ul li{display:block; float:left; width:142px; margin:0 0 0 15px;}
+#container #homepage .two_third ul li:first-child{margin-left:0;}
+#container #homepage .two_third ul li article{}
+#container #homepage .two_third ul li article figure{}
+#container #homepage .two_third ul li article figure img{margin-bottom:20px; padding:17px; border:1px solid #CCCCCC;}
+#container #homepage .two_third ul li article figure figcaption{}
+#container #homepage .two_third ul li article figure figcaption h2{}
+#container #homepage .two_third ul li article figure figcaption p{}
+#container #homepage .two_third ul li article figure figcaption footer{text-align:right;}
+
+#container #homepage .one_third{margin-bottom:0;}
+#container #homepage .one_third ul{margin:0; padding:0; list-style:none;}
+#container #homepage .one_third ul li{display:block; width:100%; margin:35px 0 0 0; padding:0;}
+#container #homepage .one_third ul li:first-child{margin-top:0;}
+#container #homepage .one_third ul li article{display:block; width:100%;}
+#container #homepage .one_third ul li article figure{float:left; width:64px;}
+#container #homepage .one_third ul li article div{float:right; width:220px;}
+#container #homepage .one_third ul li article div h2{margin-bottom:0;}
+#container #homepage .one_third ul li article div p{margin:6px 0 0 0; padding:0;}

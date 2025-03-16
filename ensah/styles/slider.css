@@ -1,0 +1,33 @@
+/*
+HTML 5 Template Name: Symfoni
+File: Slider CSS
+Author: OS Templates
+Author URI: http://www.os-templates.com/
+Licence: <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>
+*/
+
+#slider{position:relative; display:block; width:940px; height:360px; padding:0; border:10px solid #FFFFFF;}
+#slider #controls{position:absolute; width:940px; height:360px;}
+
+#slider .next, #slider .prev{position:absolute; display:block; top:129px; left:0; width:24px; height:90px; background:none; z-index:101;}
+#slider .next{left:916px;}
+
+#slider #sliderpagination{position:absolute; display:block; top:0; width:100%; margin:0; padding:0; text-align:center; z-index:101;}
+#slider #sliderpagination ul, #slider #sliderpagination li{display:inline-block; margin:0; padding:0;}
+#slider #sliderpagination ul{
+	padding:5px 15px;
+	background-color:#FFFFFF;
+	/* CSS3 Border Radius - Only works in latest browsers */
+	-moz-border-radius:0 0 10px 10px;
+	-webkit-border-radius:0 0 10px 10px;
+	-khtml-border-radius:0 0 10px 10px;
+	border-radius:0 0 10px 10px;
+	}
+#slider #sliderpagination li a{display:inline-block; width:16px; height:0; margin:0 5px; padding:16px 0 0 0; background:url("../images/slider/controls/sliderpagination.png") 0 0; overflow:hidden;}
+#slider #sliderpagination li a:hover, #slider #sliderpagination li.current a{background-position:0 -16px;}
+
+#slider .caption{font-family:Arial, Helvetica, sans-serif ; font-style:italic; position:absolute; bottom:10px; left:50px; width:460px; height:50px; padding:10px; color:#FFFFFF; background:#000000;}
+#slider .caption{background-color:hsla(0, 0%, 0%, 0.7);}
+#slider .caption h2, #slider .caption p{margin:0; padding:0; color:#FFFFFF; background-color:transparent;}
+#slider .caption h2{margin-bottom:8px; font-size:18px; font-weight:normal;}
+#slider .caption p{line-height:1.0em;}

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <title>ENSA Al Hoceima | Site Officiel de l'Ecole Nationale des Sciences Appliquées d'Al-Hoceima</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Site de l'école nationale des Sciences Appliquées d'Al-Hoceima (ENSAH)" />
+  <meta name="keywords" content="Université, Mohammed Premier, Oujda, ensah, Université Mohammed 1, Université Mohamed 1, Université Mohammed Premier, Al-Hoceima, Alhoceima, Al hoceima, ENSAH, ENSA, ingénieurs, cycle ingénieur, génie civil, informatique, environnement" />
+  <link rel="stylesheet" href="styles/layout.css" type="text/css">
+  <script src="scripts/jquery-1.8.2.min.js"></script>
+  <script src="scripts/jquery-defaultvalue.js"></script>
+  <script src="scripts/jquery-browsercheck.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="styles/ie.css" type="text/css">
+  <script src="scripts/ie/html5shiv.min.js"></script>
+  <script src="scripts/jquery-slides.js"></script>
+  <script>
+    $(function () {
+      $('#slider').slides({
+        play: 5000,
+        pause: 2500,
+        hoverPause: true
+      });
+    });
+  </script>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-52698324-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <style>
+    /* Styles CSS corrigés */
+    html, body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    #map {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: darkblue;
+      color: white;
+      padding: 40px 0;
+      margin-top: 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    footer a {
+      color: #4a3fb3;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #4a3fb3;
+      text-decoration: underline;
+    }
+
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo-left img {
+      width: 120px;
+      height: auto;
+    }
+
+    .logo-right img {
+      width: 120px;
+      height: auto;
+    }
+
+    .Stylelog {
+      font-family: 'Arial', sans-serif;
+      color: #2017a3;
+      font-weight: bold;
+      text-align: left;
+      line-height: 1.2;
+    }
+
+    .Stylelog p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .Stylelog p:first-child {
+      font-size: 24px;
+    }
+
+    .Stylelog p:nth-child(2) {
+      font-size: 18px;
+    }
+
+    .Stylelog p:nth-child(3) {
+      font-size: 16px;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    #topnav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #topnav ul li {
+      margin-right: 20px;
+    }
+
+    #topnav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 10px 15px;
+      transition: 0.3s;
+    }
+
+    #topnav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+
+    .map-login-container {
+      display: flex;
+      gap: 2rem;
+      max-width: 1200px;
+      width: 100%;
+      margin: 20px auto;
+    }
+
+    #homepage {
+      flex: 1;
+      max-width: 50%;
+    }
+
+    .conteneur {
+      flex: 1;
+      max-width: 50%;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .banniere img {
+      width: 100%;
+      height: auto;
+    }
+
+    .contenu {
+      padding: 2rem;
+    }
+
+    .titre-principal {
+      color: #1a73e8;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .input-texte {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .bouton-connexion {
+      width: 100%;
+      padding: 12px;
+      background: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .bouton-connexion:hover {
+      background: #63a4ff;
+    }
+
+    @media (max-width: 768px) {
+      .map-login-container {
+        flex-direction: column;
+      }
+
+      #homepage, .conteneur {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<style>
+    html, body {
+      overflow-x: hidden;  /* Empêche le scroll horizontal */
+      margin: 0;
+      padding: 0;
+      width: 100%;
+  }
+  .wrapper {
+      width: 100%;
+      max-width: 1200px; /* Empêche tout débordement */
+      overflow: hidden;
+      margin: 0 auto;
+  }
+  
+    #map {
+        width:  100%;
+
+        height: 300px;
+
+        height: 400px;
+ 
+        border: 1px;
+        border-radius: 8px;
+    }
+  
+    footer {
+        background-color: darkblue;
+        color: white;
+        padding: 40px 0;
+        margin-top: 20px;
+        width: 100%;
+        position: relative;
+        margin-left:-215px;
+        right:-20px;
+        text-align: center;
+    }
+  
+    footer a {
+        text-decoration: none;
+        color: #4a3fb3;
+    }
+  
+    footer a:hover {
+        color: #4a3fb3;
+        text-decoration: underline;
+        opacity: 1;
+    }
+    .header {
+      display: flex;
+      justify-content: centrer;
+      align-items: center;
+      padding: 10px 0;
+      flex-wrap: wrap; /* Permet d’adapter sur petits écrans */
+      width: 100%;
+      position:relative;
+    }
+    .logo-left img {
+      position: absolute;
+      top: 10px;
+      left:20px;
+      width: 120px; 
+      max-width: 100%; /* Taille ajustable */
+      height: auto;
+    }
+  /* Style du logo ENSAH droit */
+    .logo-right {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      width:200px;
+      max-width: 120px; /* Taille ajustable */
+      height: auto;
+    }
+    h1, p {
+      margin: 0;
+      padding: 0;
+    }
+    img, iframe {
+      max-width: 100%;
+      height: auto;
+    }
+  
+  
+    .StyleBodyCols {
+        font-size: 12px;
+        text-align: center;
+    }
+    .Stylelog {
+      font-family: 'Arial', sans-serif;
+      color: #2017a3; /* Bleu vif */
+      font-weight: bold;
+      text-align: left;
+      line-height: 1.2;
+    }
+    .Stylelog p {
+      margin: 0;
+      padding: 0;
+    }
+    .Stylelog p:first-child {
+      font-size: 24px; /* Taille plus grande pour "Université" */
+      font-weight: bold;
+    }
+    .Stylelog p:nth-child(2) {
+      font-size: 18px; /* Taille intermédiaire pour "ABDELMALEK ESSAADI" */
+      font-weight: bold;
+    }
+    .Stylelog p:nth-child(3) {
+      font-size: 16px; /* Taille normale pour le reste */
+      font-weight: normal;
+    }
+    h1 {
+      background-color: transparent; /* Suppression de l'arrière-plan */
+      padding: 10px 0; /* Ajustement de l'espacement */
+      text-align: left;
+    }
+    #hgroup{
+      display: flex;
+    }
+    .mainIcons {
+        margin: 0;
+        padding: 0;
+    }
+  
+    .mainIcons img {
+        border: 0;
+        margin: 0;
+    }
+  
+    .mainIcons img:hover {
+        border: 0;
+        margin: 0;
+        -webkit-filter: grayscale(50%);
+        filter: contrast(0.6);
+        -webkit-filter: contrast(0.6);
+        -moz-filter: contrast(0.6);
+        -o-filter: contrast(0.6);
+        -ms-filter: contrast(0.6);
+    }
+    /* Style pour le menu */
+    /* Conteneur pour aligner le menu et la barre de recherche */
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Le menu à gauche, la recherche à droite */
+      padding: 10px 20px;
+      text-transform: capitalize
+    }
+  /* Style du menu */
+    #topnav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #topnav ul li {
+      margin-right: 20px;
+    }
+    #topnav ul li a {
+      text-decoration: none;
+      color: white; /* Texte en blanc */
+      font-size: 15px;
+      font-weight: bold;
+      padding: 10px 15px; /* Espacement pour un meilleur rendu */
+      transition: 0.3s;
+      background: none; /* Suppression du fond blanc */
+      border-radius: 0; /* Supprime tout arrondi */
+    }
+    #topnav ul li a:hover {
+      border-radius: 5px;
+    }
+  /* Style de la barre de recherche */
+    .fl_right {
+      display: flex;
+      align-items: center;
+    }
+    .input-group {
+      width: auto;
+      max-width: 400px;/* Ajuste la longueur totale du champ de recherche */
+  }
+  
+  .form-control {
+      flex-grow: 1; /* Permet au champ de texte de prendre plus de place */
+  }
+  
+  .input-group-append button {
+      width: 50px;
+      height: 40px;
+  }
+  .fas.fa-search {
+      font-size: 16px; /* Ajuste la taille de l'icône */
+      color: white; /* Assure que l'icône est visible */
+  }
+  
+    html {
+      scroll-behavior: smooth;
+    }
+  /*login style*/
+    /* Conteneur principal : mettre les deux blocs côte à côte */
+  /* Conteneur principal : mettre la carte et le login côte à côte */
+  :root {
+      --bleu-ensah: #1a73e8; /* Bleu principal */
+      --bleu-clair: #63a4ff; /* Bleu clair pour les effets hover */
+      --gris-fonce: #4a4a4a; /* Gris foncé pour les textes */
+      --gris-clair: #f8f9fa; /* Gris très clair pour le fond */
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+  }
+  
+  body {
+      min-height: 100vh;
+      background: var(--gris-clair);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+  }
+  
+  .map-login-container {
+      display: flex;
+      gap: 2rem; /* Espace entre la carte et le formulaire */
+      max-width: 1200px;
+      width: 100%;
+  }
+  
+  /* Section de la carte (à gauche) */
+  #homepage {
+      flex: 10; /* Prend 30% de l'espace disponible */
+      max-width: 50%; /* Limite la largeur de la carte */
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+  }
+  
+  #homepage h1 {
+      text-align: center;
+      color: var(--bleu-ensah);
+      font-size: 1.5rem;
+      padding: 1rem;
+  }
+  
+  #map {
+      width: 100%;
+      height: 450px;
+      border: none;
+  }
+  
+  /* Section du formulaire de connexion (à droite) */
+  .conteneur {
+      flex: 2; /* Prend 70% de l'espace disponible */
+      max-width: 50%; /* Limite la largeur du formulaire */
+      background: rgb(255, 255, 255);
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+  }
+  
+  .banniere {
+      height: 110px;
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .banniere img {
+      width: 95%;
+      height: 95%;
+      object-fit: cover;
+      object-position: center;
+  }
+  
+  .contenu {
+      padding: 2rem;
+  }
+  
+  .en-tete {
+      text-align: center;
+      margin-bottom: 2rem;
+  }
+  
+  .titre-principal {
+      color: var(--bleu-ensah);
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+  }
+  
+  .groupe-form {
+      margin-bottom: 1.5rem;
+  }
+  
+  .input-texte {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      color: var(--gris-fonce);
+  }
+  
+  .input-texte::placeholder {
+      color: #aaaaaa;
+  }
+  
+  .liens-utiles {
+      text-align: center;
+      margin: 1.5rem 0;
+      color: var(--bleu-ensah);
+  }
+  
+  .liens-utiles a {
+      color: var(--bleu-ensah);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+  }
+  
+  .liens-utiles a:hover {
+      color: var(--bleu-clair);
+  }
+  
+  .bouton-connexion {
+      width: 100%;
+      padding: 12px;
+      background: var(--bleu-ensah);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+  }
+  
+  .bouton-connexion:hover {
+      background: var(--bleu-clair);
+  
+    } 
+  /* Placeholder */
+  .form input::placeholder {
+      color: #90a4ae;
+  }
+  
+  /* Focus */
+  .form input:focus {
+      border-color: #2196F3;
+      box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
+      transform: scale(1.02);
+  }
+  
+  /* Bouton de connexion */
+  .form button {
+      background: #2196F3;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+  }
+  
+  .form button:hover {
+      background: #1976D2;
+      box-shadow: 0 6px 16px rgba(25, 118, 210, 0.25);
+      transform: translateY(-2px);
+  }
+  
+  /* Footer du formulaire */
+  .form-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #757575;
+  }
+  
+  .form-footer a {
+      color: #2196F3;
+      text-decoration: none;
+      font-weight: 500;
+  }
+  
+  /* Adaptation pour mobile */
+  @media (max-width: 768px) {
+      .map-login-container {
+          flex-direction: column; /* Passe en colonne */
+          align-items: center;
+      }
+  
+      #homepage, .login-page {
+          max-width: 100%;
+      }
+  
+      .form {
+          max-width: 100%;
+      }
+  }
+  
+  /* Animation pour une meilleure apparence */
+  @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+  /*style de pesentation*/
+  #presentation h1{
+    color:#0f0a57;
+  }
+  #presentation p{
+    color:#161515;
+    font-size: 18px;
+  }
+  @media (max-width: 768px) {
+      .nav-container {
+          flex-direction: column;
+      }
+  
+      .map-login-container {
+          flex-direction: column;
+          align-items: center;
+      }
+  }
+  
+  </style>
+<body>
+  <div class="wrapper row1">
+    <header id="header" class="clear">
+      <div id="hgroup">
+        <div class="logo-left">
+          <img src="../webimages/image1.jfif" alt="Logo ENSAH" />
+        </div>
+        <h1>
+          <span class="Stylelog">
+            <p>Université<br>ABDELMALEK ESSAADI</p>
+            <p>Ecole Nationale des Sciences<br>Appliquées d'Al-Hoceima</p>
+          </span>
+        </h1>
+      </div>
+      <div class="logo-right">
+        <img src="../webimages/image2.jfif" alt="Logo Université" />
+      </div>
+      <ul id="social">
+        <li><a href="https://portal.microsoftonline.com/" target="_blank"><img src="images/social/contact.png" alt="Contact"></a></li>
+        <li><a href="https://twitter.com/ensaalhoceima" target="_blank"><img src="images/social/2.png" alt="Twitter"></a></li>
+        <li><a href="https://www.facebook.com/ensaalhoceima" target="_blank"><img src="images/social/3.png" alt="Facebook"></a></li>
+        <li><a href="#"><img src="images/social/1.png" alt="Social"></a></li>
+      </ul>
+    </header>
+  </div>
+
+  <!-- Menu du site -->
+  <div class="wrapper row2">
+    <div class="nav-container">
+      <nav id="topnav">
+        <ul class="clear">
+          <li class="first active"><a href="index.php">Accueil</a></li>
+          <li><a href="#presentation">Présentation</a></li>
+          <li><a href="#map">Location</a></li>
+          <li><a href="#map">Inscription</a></li>
+          <li><a href="#contact-section">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="fl_right">
+        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+          <div class="input-group">
+            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenu principal -->
+  <div class="wrapper row3">
+    <div id="container" class="clear">
+      <section id="slider">
+        <div id="controls">
+          <a href="javascript:void(0)" class="prev"><img src="images/slider/controls/prev.png" alt="Previous"></a>
+          <a href="javascript:void(0)" class="next"><img src="images/slider/controls/next.png" alt="Next"></a>
+          <div class="slidescontainer">
+            <figure class="slide">
+              <img src="images/slider/1.jpg" alt="Slide 1">
+              <figcaption class="caption">
+                <h2>Des formations dans les filières les plus demandées</h2>
+                <p>Génie Informatique, Génie Civil et Génie Environnement.</p>
+              </figcaption>
+            </figure>
+            <!-- Ajoutez d'autres slides ici -->
+          </div>
+        </div>
+      </section>
+
+      <section id="presentation">
+        <h1>ENSA d'Al-Hoceima</h1>
+        <p>L'École Nationale des Sciences Appliquées d'Al Hoceima (ENSAH), créée en 2008, est un établissement public d'enseignement supérieur affilié à l'Université Abdelmalek Essaadi.</p>
+      </section>
+
+      <!-- Carte et formulaire de connexion -->
+      <div class="map-login-container">
+        <div id="homepage">
+          <h1>ENSAH sur Maps</h1>
+          <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.722947043049!2d-3.861719!3d35.171984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd742a5c2f5c5b7b%3A0x5f5e5e5e5e5e5e5e!2sÉcole+Nationale+des+Sciences+Appliquées+d'Al+Hoceima!5e0!3m2!1sfr!2sma!4v1698765432105!5m2!1sfr!2sma" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="conteneur">
+          <div class="banniere">
+            <img src="images/K.png" alt="Bannière ENSAH">
+          </div>
+          <div class="contenu">
+           
+            <form>
+              <div class="groupe-form">
+                <label>Identifiant institutionnel</label>
+                <input type="email" class="input-texte" placeholder="utilisateur@etu.uae.ac.ma" required>
+              </div>
+              <div class="groupe-form">
+                <label>Mot de passe</label>
+                <input type="password" class="input-texte" placeholder="••••••••" required>
+              </div>
+              <button type="submit" class="bouton-connexion">Se Connecter</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" id="contact-section">
+          <h4>Contacts</h4>
+          <ul class="list-unstyled">
+            <li><strong>Adresse :</strong> Al Hoceima, Maroc</li>
+            <li><strong>Téléphone :</strong> +212(0) 539 80 57 12</li>
+            <li><strong>Email :</strong> <a href="mailto:contact@ensah.ma">contact@ensah.ma</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4>Départements</h4>
+          <ul class="list-unstyled">
+            <li>Génie Informatique</li>
+            <li>Génie Civil</li>
+            <li>Génie Environnement</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4>Liens Utiles</h4>
+          <ul class="list-unstyled">
+            <li><a href="https://www.ensah.ma" target="_blank">Site Officiel</a></li>
+            <li><a href="http://www.uae.ma" target="_blank">Université Abdelmalek Essaadi</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
