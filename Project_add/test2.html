@@ -21,7 +21,7 @@
     /* Menu vertical */
     #sidebar {
       width: 250px;
-      background: #0f00b3;
+      background:#2466e0;
       color: white;
       padding: 20px;
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -222,7 +222,8 @@
 </head>
 
 <body>
-  
+
+    <!--End of Tawk.to Script-->
   <!-- Menu vertical -->
   <div id="sidebar">
     <div class="logo">
@@ -288,22 +289,14 @@
     <!-- Formulaire d'inscription -->
     <section id="inscription">
       <h2>Inscription</h2>
-      <input 
-                        type="email" 
-                        class="input-texte"
-                        placeholder="utilisateur@etu.uae.ac.ma"
-                        pattern="[a-z]+\.[a-z]+@etu\.uae\.ac\.ma"
-                        title="Format : utilisateur@etu.uae.ac.ma"
-                        required
-                    >
-                    <input 
-                    type="password" 
-                    class="input-texte"
-                    placeholder="••••••••"
-                    minlength="8"
-                    required
-                >
-      <button>Se Connecter</button>
+      <input type="email"  class="input-texte" placeholder="utilisateur@etu.uae.ac.ma" pattern="[a-z]+\.[a-z]+@etu\.uae\.ac\. title="Format : utilisateur@etu.uae.ac.ma"
+      required>
+      <input type="password" class="input-texte"placeholder="••••••••"minlength="8" required >
+      <div class="liens-utiles">
+        <a href="#">Aide</a> | 
+        <a href="#">Mot de passe oublié ?</a>
+    </div>
+    <button type="submit" class="bouton-connexion">Se Connecter</button>
     </section>
   </div>
 
@@ -320,6 +313,16 @@
        <li><strong>Site web :</strong> <a href="https://www.ensah.ma" target="_blank">www.ensah.ma</a></li>
        </ul>
     </div>
+                 <div>
+                    <h4 ><strong>Liens utiles</strong></h4>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.ensah.ma" target="_blank">Site officiel</a></li>
+                        <li><a href="http://www.uae.ma/website/" target="_blank">Site de l'université</a></li>
+                        <li><a href="https://www.cnrst.ma/fr/" target="_blank">CNRST</a></li>
+                        <li><a href="https://www.fsth.ma/" target="_blank">FST Al Hoceima</a></li>
+                        
+                    </ul>
+                  </div>
     <div>
       <h3>Réseaux Sociaux</h3>
       <p>
@@ -332,16 +335,17 @@
 
   <!-- Intégration du chatbot Tawk.to -->
   <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/67d60457e18213190b13fe55/1ime01tj6';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
+
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/67d60457e18213190b13fe55/1ime01tj6';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
   </script>
   <!--End of Tawk.to Script-->
 </body>
