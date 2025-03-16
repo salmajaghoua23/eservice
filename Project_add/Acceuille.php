@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 
@@ -287,11 +288,11 @@
     </section>
 
     <!-- Formulaire d'inscription -->
-    <form action="" method="post">
+    <form action="Login.php" method="post">
     <section id="inscription">
       <h2>Inscription</h2>
      
-     <input type="email" name="email" class="input-texte"   placeholder="utilisateur@etu.ac.ma" pattern="[a-z]+\.[a-z]+@etu\.uae\.ac\." title=" Format : utilisateur@etu.ac.ma" 
+     <input type="email" name="email" class="input-texte"  
       required>
       <input type="password" name="passwrd" class="input-texte"placeholder="••••••••"minlength="8" required >
       <div class="liens-utiles">
